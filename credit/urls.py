@@ -5,8 +5,9 @@ from . import views
 
 
 urlpatterns = [
-    url('^', include_docs_urls(title='Credit API')),
-
+    url(r'^$', views.auth_redirect, name='auth_redirect'),
+    # API docs:
+    url(r'^docs/', include_docs_urls(title='Credit API')),
     # Common client forms:
     url(r'^api/client-forms/$', views.ClientFormList.as_view(),
         name='client-form-list'),

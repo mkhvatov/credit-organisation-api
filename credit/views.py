@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import (
     generics,
@@ -126,3 +127,10 @@ class CreditProposalStatusUpdate(generics.RetrieveUpdateAPIView):
         user = self.request.user
         if user.profile.is_credit_organization:
             return CreditProposal.objects.filter(offer__credit_organization=user)
+
+
+def auth_redirect(request):
+    if request.user and request.user.is_authenticated:
+        return redirect('/docs/')
+    else:
+        return redirect('/admin/')

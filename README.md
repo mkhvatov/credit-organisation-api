@@ -8,7 +8,7 @@ Web API for credit organizations and partners with different access rights.
 2. Activate the virtual environment: ```source env/bin/activate```
 3. Install the requirements: ```pip install -r requirements.txt```
 4. Create initial DB migrations: ```python manage.py migrate```
-5. Load data to DB: ```python manage.py loaddata --format json credit/fixtures/db.json```
+5. Load data to DB: ```python manage.py loaddata credit/fixtures/db.json```
 6. Run server: ```python manage.py runserver```
 7. Login: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 8. Open API documentation: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)

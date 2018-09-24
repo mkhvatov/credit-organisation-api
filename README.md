@@ -17,6 +17,8 @@ Alternative installation by Docker:
 
 1. ```docker-compose build```
 2. ```docker-compose up```
+3. Login: [http://0.0.0.0:8000/admin/](http://0.0.0.0:8000/admin/)
+4. Open API documentation: [http://0.0.0.0:8000/](http://0.0.0.0:8000/)
 
 ## API login information
 

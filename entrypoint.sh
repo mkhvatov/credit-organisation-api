@@ -3,7 +3,7 @@
 # Apply database migrations
 echo "Apply database migrations"
 python manage.py migrate
-python manage.py loaddata --format json credit/fixtures/db.json
+python manage.py loaddata credit/fixtures/db.json
 
 # Start server
 echo "Starting server"

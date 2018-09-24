@@ -25,3 +25,15 @@ class TestCreditOrganizationAPI(TestCase):
         self.assertEqual(request.status_code, 200)
         request = requests.get(self.api_url, headers=self.invalid_headers)
         self.assertEqual(request.status_code, 403)
+
+
+class TestSuperUserAPI(TestCase):
+    api_url = 'http://127.0.0.1:8000{}'.format(reverse('credit-proposal-update-delete/10'))
+    valid_headers = {'Authorization': 'Token 5650d5325a302398017123ff9d2a5e00cb8f1203'}
+    invalid_headers = {'Authorization': 'Token invalid_token'}
+
+    def test_credit_organization_api_for_permission(self):
+        request = requests.get(self.api_url, headers=self.valid_headers)
+        self.assertEqual(request.status_code, 200)
+        request = requests.get(self.api_url, headers=self.invalid_headers)
+        self.assertEqual(request.status_code, 403)
